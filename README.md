@@ -28,9 +28,6 @@ speeding up the CI process as you don't have to wait for any build pipelines, et
 # Usage
 
 
-TODO: Fill in for your project.
-
-# Development
 
 ## Running the CI steps (black, pylint, etc.)
 
@@ -44,31 +41,17 @@ git hooks. This only needs to be done once using:
 
     pre-commit install
 
-An advantage of using these hooks is that any code you commit will be checked against
-pre-commit's CI steps, and thus will have a much better chance of passing the
-build pipeline in Azure DevOps.
+
 
 **Although we provide default setup for the different tools, you can edit their config files to fit your personal preferences. For example, for pylint you can edit the .pylintrc file to fit your preferences.**
 
 ## Running (unit) tests
 
 Tests can be run locally using the command ``make test``.
-or  
+or
 ```pip install -e .[dev] ```
 
 ```pytest```
-
-## Setting up the CI in Azure DevOps
-
-To set up automatic CI in Azure DevOps, perform the following steps:
-
-* Navigate to your repository page in Azure DevOps.
-* Click on 'Set up build'.
-* Check if the azure-pipelines.yml was found and looks ok.
-* Click on 'Run'.
-
-This should set up the pipeline and start an initial run. Note that these steps
-only need to be performed once.
 
 
 Credits
@@ -82,20 +65,10 @@ References
 ## Project structure
 
 ```
-├── data
-│   ├── external        <- Data from third party sources.
-│   ├── interim         <- Intermediate data that has been transformed.
-│   ├── processed       <- The final, canonical data sets for modeling.
-│   └── raw             <- The original, immutable data dump.
-├── docs                <- Docs from a default Sphinx project; see sphinx-doc.org for details.
-├── models              <- Trained and serialized models, model predictions, or model summaries.
+
 ├── notebooks           <- Jupyter notebooks.
-├── references          <- Data dictionaries, manuals, and all other explanatory materials.
-├── reports             <- Generated analysis as HTML, PDF, LaTeX, etc.
-│   └── figures         <- Generated graphics and figures to be used in reporting.
-├── scripts             <- Scripts for your workflow.
 ├── src
-│   └── {your_package}  <- Directory containing your Python modules/sub-packages.
+│   └── prophet_remade  <- Directory containing your Python modules/sub-packages.
 ├── tests               <- Tests for your Python modules/sub-packages.
 ├── azure-pipelines.yml <- File describing the CI steps for Azure DevOps.
 ├── environment.yml     <- File describing the conda environment.

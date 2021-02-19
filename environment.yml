@@ -5,6 +5,7 @@ name: prophet-remade
 channels:
   - conda-forge
   - defaults
+  - pytorch
 dependencies:
   # Base dependencies
   - python==3.7
@@ -15,10 +16,8 @@ dependencies:
   # Notebook stuff
   - ipykernel
   - matplotlib
-  - python-dotenv
-
-  # CLI stuff
-  - click
+  # - jupyter
+  # - jupyterlab
 
   # Dev/CI dependencies
   - pre-commit
@@ -26,11 +25,13 @@ dependencies:
   - pytest
   - black
 
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cudatoolkit=10.2
+  - pip:
+    - pyro-ppl
+
   # Pin pylint/astroid versions to avoid recursion issue mentioned in:
   # https://github.com/PyCQA/pylint/issues/3318.
-  - pylint==2.3.1
-  - astroid==2.2.5
-
-  # Documentation dependencies.
-  - sphinx
-  - sphinx_rtd_theme
+  - pylint
