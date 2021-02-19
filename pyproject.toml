@@ -1,0 +1,16 @@
+[tool.black]
+# Add docs/ to the standard exclude: templating will often break it
+exclude = '''
+(
+.eggs
+| .git
+| .mypy_cache
+| .tox
+| .venv
+| _build
+| buck-out
+| build
+| dist
+| docs
+)
+'''

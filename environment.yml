@@ -1,0 +1,36 @@
+# conda env create -f environment.yml
+#  or
+# conda env update -f environment.yml
+name: prophet-remade
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Base dependencies
+  - python==3.7
+  - pandas
+  - pip
+  - setuptools
+
+  # Notebook stuff
+  - ipykernel
+  - matplotlib
+  - python-dotenv
+
+  # CLI stuff
+  - click
+
+  # Dev/CI dependencies
+  - pre-commit
+  - pytest-cov
+  - pytest
+  - black
+
+  # Pin pylint/astroid versions to avoid recursion issue mentioned in:
+  # https://github.com/PyCQA/pylint/issues/3318.
+  - pylint==2.3.1
+  - astroid==2.2.5
+
+  # Documentation dependencies.
+  - sphinx
+  - sphinx_rtd_theme
