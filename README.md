@@ -12,18 +12,6 @@ and install our code into the environment. This can be done as follows::
     conda activate prophet-remade
     python -m pip install -e .
 
-Note that this command installs our code as an editable package so that changes in
-your code are directly reflected in the environment. This allows you to import your
-code using `import prophet_remade`. This can be combined with the
-autoreload extension to automatically reload your modules on any change.
-
-For development purposes, you can also set-up pre-commit to run CI steps locally
-before each commit::
-
-    pre-commit install
-
-This will ensure that black, pylint, etc. are run whenever you commit your code,
-speeding up the CI process as you don't have to wait for any build pipelines, etc.
 
 # Usage
 
@@ -40,18 +28,6 @@ To automatically run the CI steps on each commit you need to install pre-commit'
 git hooks. This only needs to be done once using:
 
     pre-commit install
-
-
-
-**Although we provide default setup for the different tools, you can edit their config files to fit your personal preferences. For example, for pylint you can edit the .pylintrc file to fit your preferences.**
-
-## Running (unit) tests
-
-Tests can be run locally using the command ``make test``.
-or
-```pip install -e .[dev] ```
-
-```pytest```
 
 
 Credits
